@@ -35,8 +35,8 @@ class RollDice extends Component {
     return (
       <>
         <div className='rollDice pt-3'>
-          <Dice face={this.state.dice1} />
-          <Dice face={this.state.dice2} />
+          <Dice face={this.state.dice1} rolling={this.state.rolling} />
+          <Dice face={this.state.dice2} rolling={this.state.rolling} />
         </div>
         <button
           className='btn btn-primary btn-lg'
