@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import Dice from './Dice';
 
 class RollDice extends Component {
+  static defaultProps = {
+    sides: ['one', 'two', 'three', 'four', 'five', 'six']
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -9,6 +12,16 @@ class RollDice extends Component {
       dice2: 'two'
     };
   }
+
+  roll = event => {
+    const newDice1 = this.props.sides[Math.floor(Math.random() * this.props.sides.length)];
+    const newDice2 = this.props.sides[Math.floor(Math.random() * this.props.sides.length)];
+    this.setState({
+      dice1: newDice1,
+      dice2: newDice2
+    });
+  };
+
   render() {
     return (
       <>
