@@ -6,7 +6,9 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <RollDice />
+      <header>
+        <RollDice />
+      </header>
     </div>
   );
 }

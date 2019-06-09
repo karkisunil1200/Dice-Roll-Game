@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Dice from './Dice';
+import './RollDice.css';
 
 class RollDice extends Component {
   static defaultProps = {
@@ -9,7 +10,8 @@ class RollDice extends Component {
     super(props);
     this.state = {
       dice1: 'one',
-      dice2: 'two'
+      dice2: 'two',
+      rolling: false
     };
   }
 
@@ -18,19 +20,30 @@ class RollDice extends Component {
     const newDice2 = this.props.sides[Math.floor(Math.random() * this.props.sides.length)];
     this.setState({
       dice1: newDice1,
-      dice2: newDice2
+      dice2: newDice2,
+      rolling: true
     });
+
+    setTimeout(() => {
+      this.setState({
+        rolling: false
+      });
+    }, 500);
   };
 
   render() {
     return (
       <>
-        <div className='rollDice'>
+        <div className='rollDice pt-3'>
           <Dice face={this.state.dice1} />
           <Dice face={this.state.dice2} />
         </div>
-        <button className='btn btn-primary btn-lg' onClick={this.roll}>
-          Roll Dice!
+        <button
+          className='btn btn-primary btn-lg'
+          onClick={this.roll}
+          disabled={this.state.rolling}
+        >
+          {this.state.rolling ? 'Rolling...' : 'Roll Dice!'}
         </button>
       </>
     );

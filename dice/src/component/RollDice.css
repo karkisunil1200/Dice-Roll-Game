@@ -1,0 +1,9 @@
+.rollDice {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.btn {
+  font-size: 22px;
+  margin-top: 80px;
+}

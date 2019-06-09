@@ -4,7 +4,3 @@
   color: orangered;
   display: inline;
 }
-.rollDice {
-  display: flex;
-  justify-content: center;
-}
