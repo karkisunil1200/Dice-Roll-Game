@@ -1,0 +1,10 @@
+.dice {
+  font-size: 10em;
+  padding: 0.24em;
+  color: orangered;
+  display: inline;
+}
+.rollDice {
+  display: flex;
+  justify-content: center;
+}
